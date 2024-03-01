@@ -56,6 +56,7 @@ The purpose of this project is to create a GUI (graphical user interface) pop-up
 
     This will detect if the user closed the interface. If so, it runs the function which set the global variable `stop_thread` to `True` and that will stop the `countdown()` function from running automatically, allowing the stop the script entirely. 
 
+5. Converted `GUI_4.0` into a `.pyw` file instead of `.py` to avoid terminal from running when opening the applciation. 
 ----------------------------------------------------------------
 
 [Application]
