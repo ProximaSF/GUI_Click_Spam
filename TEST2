@@ -1,0 +1,38 @@
+from time import *
+import threading
+
+timer = 4
+def countdown(): #Runs in the background
+    global timer
+    while True:
+        if timer == 0:
+            spam_speed_calculate()
+            timer = 4
+        else:
+            timer = timer - 1
+            sleep(1)
+            print(f"\n{timer}s")
+
+timer_threading = threading.Thread(target=countdown)
+timer_threading.start()
+
+print("Spam")
+user_list = []
+
+def spam_speed_calculate(): # Function is called in countdown()
+    global user_list
+    size = len(user_list)
+    speed_per_sec = size/4
+    print(f"You manage to spam {size} entires under 4 seconds. Or about {speed_per_sec} spam per second.")
+    user_list.clear()
+
+
+def spam(): #runs in the background
+    global timer
+    while True:
+        user_inputs = input()
+        user_list.append(user_inputs)
+
+spam_threading = threading.Thread(target=spam)
+spam_threading.start()
+
