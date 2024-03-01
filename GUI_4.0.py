@@ -15,9 +15,9 @@ speed = tk.IntVar(value=0)
 
 def countdown():
     global timer
-    global stop_thread
+ 
     while True:
-        if stop_thread:
+        if stop_thread: # if stop_thread is true, stop the function from running automatically
             break
         if timer == 0:
             timer = 4
@@ -41,9 +41,9 @@ def spam_click():
     click_list.append(".")
 
 def close_interface():
-    global stop_thread
-    stop_thread = True
-    root.destroy()
+    global stop_thread # So can change stop_thread to True in line 9
+    stop_thread = True 
+    root.destroy() # End the application completely
 
 timer_threading = threading.Thread(target = countdown)
 timer_threading.start()

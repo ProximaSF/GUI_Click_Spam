@@ -30,11 +30,12 @@ def speed_calculation():
     global count
     global click_list_size
     global click_list
+    
     size = len(click_list)
     speed_cal = size/4
     speed.set(speed.get() + speed_cal)
-    click_list.clear()
-    root.after(2000, lambda: speed.set(0))
+    click_list.clear() # Clear input
+    root.after(2000, lambda: speed.set(0)) # Look at notes to see what it does
     root.after(0, lambda: count.set(0)) # Look at notes to see what it does
 
 def spam_click():

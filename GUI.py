@@ -14,7 +14,7 @@ def countdown(): #Countdown from 3 to 0
         sleep(1)
         print(timer)
 timer_threading = threading.Thread(target=countdown)
-timer_threading.start() # Start the funciton automatically
+timer_threading.start() # Start the funciton automatically, run in the background
 
 clicks_storage = []
 size_list = 0
