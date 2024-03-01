@@ -48,7 +48,10 @@ The purpose of this project is to create a GUI (graphical user interface) pop-up
 
 2. Added the variable `stop_thread` to handle ending the interface and the script without errors.
 
-3. Added a way to end the code after closing the interface. 
+3. Removed `global speed` and `global count`
+    • Because when you use speed and count inside the functions `spam_click()` and `speed_calculation()`, it is not modifying the variables themselves, but calling methods on the `IntVar` objects. Therefore, you don’t need to declare them as global.
+
+4. Added a way to end the code after closing the interface. 
     • The `clase_interface()` function is exacuted by the line `root.protocol("WM_DELETE_WINDOW", close_interface)`.
 
     This will detect if the user closed the interface. If so, it runs the function which set the global variable `stop_thread` to `True` and that will stop the `countdown()` function from running automatically, allowing the stop the script entirely. 

@@ -6,7 +6,7 @@ root = tk.Tk()
 root.title("Title Meh")
 root.geometry("200x200")
 
-def countdown():
+def countdown(): #Countdown from 3 to 0
     global timer
     timer  = 4
     for i in range(4):
@@ -19,23 +19,22 @@ timer_threading.start() # Start the funciton automatically
 clicks_storage = []
 size_list = 0
 
-count = tk.IntVar(value=0) # Set count variable to 0
-speed = tk.IntVar(value=0) # Set speed variable to 0 
+count = tk.IntVar(value=0) # Set count variable to object 0
+speed = tk.IntVar(value=0) # Set speed variable to object 0 
 speed_set = False
 
 def on_button_command():
     global speed_set
     # if speed_set = False here, it will turn to False after it has turned to True
-    if timer > 0:
+    if timer > 0: # Check if timer is 0, if not, allow clicks.
         count.set(count.get() + 1)
         clicks_storage.append(".")
-    else:
+    else: # Else disable and display speed/sec and the message
         print("Time out")
         size_list = len(clicks_storage)
-        if not speed_set: # To avoid changing the speed txt more than once
+        if speed_set == False: # To avoid changing the speed txt more than once.
             speed.set(speed.get() + size_list)
             speed_set = True # set global variable speed_set (line 24) to True
-
 
 label = tk.Label(root, textvariable=0)
 label.pack()

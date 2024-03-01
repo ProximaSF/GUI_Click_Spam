@@ -28,10 +28,7 @@ def countdown():
             print(timer)
 
 def speed_calculation():
-    global speed
-    global count
-    global click_list_size
-    global click_list
+    
     size = len(click_list)
     speed_cal = size/4
     speed.set(speed.get() + speed_cal)
